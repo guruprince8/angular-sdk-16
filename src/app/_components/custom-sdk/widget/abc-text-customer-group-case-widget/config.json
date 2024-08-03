@@ -1,0 +1,23 @@
+{
+  "name": "ABC_Text_CustomerGroupCaseWidget",
+  "label": "CustomerGroup Case Widget",
+  "description": "CustomerGroup Case Widget",
+  "organization": "ABC",
+  "version": "0.0.1",
+  "library": "Text",
+  "allowedApplications": [],
+  "componentKey": "ABC_Text_CustomerGroupCaseWidget",
+  "type": "Widget",
+  "subtype": "CASE",
+  "icon": "OneColumnPage.svg",
+  "properties": [
+   {
+      "name": "label",
+      "label": "Label value",
+      "format": "TEXT"
+    }
+  ],
+  "defaultConfig": {
+     "label": "@L CustomerGroup Case Widget"
+  }
+}

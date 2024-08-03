@@ -1,0 +1,37 @@
+<div *ngIf="displayMode$; else noDisplayMode">
+  <component-mapper name="FieldValueList" [props]="{ label$, value$, displayMode$ }"></component-mapper>
+</div>
+<ng-template #noDisplayMode>
+  <div *ngIf="bHasForm$; else noEdit">
+    <div [formGroup]="formGroup$">
+      <mat-icon aria-hidden="false" aria-label="arrow right" fontIcon="arrow_forward"></mat-icon>
+      <mat-label style="vertical-align: super">{{ label$ }}</mat-label>
+      <button mat-icon-button aria-label="tooltip$" (click)="buttonClick()">
+        <mat-icon aria-hidden="false" [ariaLabel]="tooltip$" fontIcon="format_list_numbered"></mat-icon>
+      </button>
+      <a [href]="value$"><mat-icon aria-hidden="false" aria-label="tooltip$" fontIcon="language"></mat-icon></a>
+    </div>
+    <div *ngIf="showTable$">
+      <h2 class="psdk-state-list-title">{{ tableLabel$ }}</h2>
+      <table mat-table [dataSource]="repeatList$">
+        <!-- State name-->
+        <ng-container [matColumnDef]="displayedColumns$[0]">
+          <th mat-header-cell *matHeaderCellDef>{{ stateCodeLabel$ }}</th>
+          <td mat-cell *matCellDef="let element">{{ element.stateCode }}</td>
+        </ng-container>
+
+        <!-- State code-->
+        <ng-container [matColumnDef]="displayedColumns$[1]">
+          <th mat-header-cell *matHeaderCellDef>{{ stateNameLabel$ }}</th>
+          <td mat-cell *matCellDef="let element">{{ element.stateName }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns$"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns$"></tr>
+      </table>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noEdit>
+  <component-mapper name="Text" [props]="{ pConn$, formatAs$: 'url' }"></component-mapper>
+</ng-template>

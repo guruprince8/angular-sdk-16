@@ -1,0 +1,21 @@
+{
+  "name": "ABC_Text_CustomerGroupDetails",
+  "label": "CustomerGroup Details",
+  "description": "CustomerGroup Details",
+  "organization": "ABC",
+  "version": "0.0.1",
+  "library": "Text",
+  "allowedApplications": [],
+  "componentKey": "ABC_Text_CustomerGroupDetails",
+  "type": "Template",
+  "subtype": "DETAILS",
+  "icon": "DefaultForm.svg",
+  "properties": [
+    {
+      "name": "A",
+      "label": "Region A",
+      "format": "CONTENTPICKER",
+      "addTypeList": ["Fields", "Views", "UIComponents"]
+    }
+  ]
+}

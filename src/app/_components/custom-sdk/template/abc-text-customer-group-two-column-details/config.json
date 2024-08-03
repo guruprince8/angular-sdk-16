@@ -1,0 +1,27 @@
+{
+  "name": "ABC_Text_CustomerGroupTwoColumnDetails",
+  "label": "CustomerGroup Two Column Details",
+  "description": "CustomerGroup Two Column Details",
+  "organization": "ABC",
+  "version": "0.0.1",
+  "library": "Text",
+  "allowedApplications": [],
+  "componentKey": "ABC_Text_CustomerGroupTwoColumnDetails",
+  "type": "Template",
+  "subtype": "DETAILS",
+  "icon": "TwoColumnDetails.svg",
+  "properties": [
+    {
+      "name": "A",
+      "label": "Region A",
+      "format": "CONTENTPICKER",
+      "addTypeList": ["Fields", "Views", "UIComponents"]
+    },
+    {
+      "name": "B",
+      "label": "Region B",
+      "format": "CONTENTPICKER",
+      "addTypeList": ["Fields", "Views", "UIComponents"]
+    }
+  ]
+}
